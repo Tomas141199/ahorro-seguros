@@ -1,3 +1,4 @@
+import { createTheme } from "@mui/material";
 import type { GatsbyConfig } from "gatsby";
 
 require("dotenv").config({
@@ -35,19 +36,9 @@ const config: GatsbyConfig = {
     },
     {
       resolve: `gatsby-theme-material-ui`,
-      options: {
-        webFontsConfig: {
-          fonts: {
-            google: [
-              {
-                family: `Montserrat`,
-                variants: [`300`, `400`, `500`],
-              },
-            ],
-          },
-        },
-      },
+      options: {},
     },
+    // "gatsby-plugin-top-layout",
   ],
 };
 

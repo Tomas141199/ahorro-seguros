@@ -1,12 +1,17 @@
 import * as React from "react";
 import type { HeadFC, PageProps } from "gatsby";
 import { Box, Button } from "@mui/material";
+import { MainLayout } from "../templates";
 
 const IndexPage: React.FC<PageProps> = () => {
   return (
-    <Box p={4}>
-      <Button variant="contained">Hello gatsby-theme-material-ui</Button>
-    </Box>
+    <MainLayout>
+      <Box p={4}>
+        <Button variant="contained" color="secondary">
+          Hello gatsby-theme-material-ui
+        </Button>
+      </Box>
+    </MainLayout>
   );
 };
 
