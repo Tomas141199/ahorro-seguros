@@ -3,3 +3,4 @@ export * from "./Card";
 export * from "./Carrusel";
 export * from "./InfoHome";
 export * from "./LazyImage";
+export * from "./Marquee";

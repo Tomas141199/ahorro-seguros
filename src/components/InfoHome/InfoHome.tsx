@@ -98,10 +98,8 @@ const InfoHome = () => {
 
             <Stack mt={4} spacing={1} justifyContent="center">
               {descripcion.map((item: any) => (
-                <Stack direction="row">
-                  <FiberManualRecordIcon
-                    sx={{ width: 10, display: "inline" }}
-                  />
+                <Stack direction="row" key={item.id}>
+                  <FiberManualRecordIcon sx={{ width: 8, display: "inline" }} />
                   <Typography component={"h4"} fontWeight="500">
                     {item.descripcion}
                   </Typography>
@@ -137,8 +135,6 @@ const InfoHome = () => {
           </Stack>
         </Grid>
       </Grid>
-
-      <Stack mt={40} />
     </Container>
   );
 };
