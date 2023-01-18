@@ -4,7 +4,8 @@ import {
   StackedCarousel,
   ResponsiveContainer,
 } from "react-stacked-center-carousel";
-import { Card } from "./helpers";
+import { Card } from "../Card";
+import "@fontsource/roboto/100.css";
 
 const Carrusel = () => {
   const data = useStaticQuery(graphql`

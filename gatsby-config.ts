@@ -9,7 +9,7 @@ const strapiConfig = {
   apiURL: process.env.STRAPI_API_URL,
   accessToken: process.env.STRAPI_TOKEN,
   collectionTypes: ["carrusel"],
-  singleTypes: [],
+  singleTypes: ["info-home"],
 };
 
 const config: GatsbyConfig = {

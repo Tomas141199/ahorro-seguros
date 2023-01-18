@@ -1,0 +1,19 @@
+.before{
+    position: relative;
+}
+
+.before:after{
+    content: "SEGUROS";
+    position: absolute;
+    color: #FF3E00;
+    font-size: 1.2rem;
+    bottom: 0;
+}
+
+
+@media (max-width:600px) {
+    .before:after{
+        font-size: 0.8rem;
+        bottom: -2px;
+    }
+  }
