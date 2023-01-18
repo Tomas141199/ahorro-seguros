@@ -69,7 +69,7 @@ const InfoHome = () => {
             </Typography>
             <Typography
               component={"h6"}
-              color={gray[500]}
+              color={gray[600]}
               sx={{ fontWeight: 100 }}
             >
               {puesto}

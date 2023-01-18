@@ -40,14 +40,7 @@ const ComponentName = () => {
               key={item.node.id}
               src={item.node.logo[0].url}
               alt={item.node.nombre}
-              style={{
-                width: "4%",
-                aspectRatio: "3/2",
-                objectFit: "contain",
-                mixBlendMode: "color-burn",
-                marginLeft: "110px",
-                marginRight: "110px",
-              }}
+              className="marquee-img"
             />
           );
         })}
