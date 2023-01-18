@@ -20,7 +20,7 @@ export function BoxDrawer(props: Props) {
       <img src={logo} alt="logo ahorro seguros" width={140} />
       <List>
         {navItems.map(({ nombre, path }) => (
-          <Link to={path} style={{ textDecoration: "none" }}>
+          <Link to={path} key={nombre} style={{ textDecoration: "none" }}>
             <ListItem key={path} disablePadding>
               <ListItemButton sx={{ textAlign: "center" }}>
                 <ListItemText primary={nombre} />

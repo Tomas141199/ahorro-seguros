@@ -10,7 +10,7 @@ interface Props {
   children: React.ReactNode;
 }
 
-export default function DrawerAppBar(props: Props) {
+export default function MainLayout(props: Props) {
   const { window, children } = props;
   const [mobileOpen, setMobileOpen] = React.useState(false);
 
@@ -22,18 +22,20 @@ export default function DrawerAppBar(props: Props) {
     window !== undefined ? () => window().document.body : undefined;
 
   return (
-    <Box sx={{ display: "flex" }}>
-      <CssBaseline />
-      <Appbar handleDrawerToggle={handleDrawerToggle} {...props} />
-      <DrawerApp
-        handleDrawerToggle={handleDrawerToggle}
-        container={container}
-        mobileOpen={mobileOpen}
-      />
-      <Box component="main" sx={{ p: 3 }}>
-        <Toolbar />
-        {children}
+    <>
+      <Box sx={{ display: "flex" }}>
+        <CssBaseline />
+        <Appbar handleDrawerToggle={handleDrawerToggle} {...props} />
+        <DrawerApp
+          handleDrawerToggle={handleDrawerToggle}
+          container={container}
+          mobileOpen={mobileOpen}
+        />
+        <Box component="main" sx={{ width: "100%" }}>
+          <Toolbar />
+          {children}
+        </Box>
       </Box>
-    </Box>
+    </>
   );
 }
