@@ -9,7 +9,7 @@ import FiberManualRecordIcon from "@mui/icons-material/FiberManualRecord";
 import LocalPhoneIcon from "@mui/icons-material/LocalPhone";
 import MailOutlineIcon from "@mui/icons-material/MailOutline";
 
-const query = graphql`
+const query_info = graphql`
   query {
     allStrapiInfoHome {
       nodes {
@@ -36,7 +36,7 @@ const query = graphql`
 const InfoHome = () => {
   const {
     allStrapiInfoHome: { nodes: info },
-  } = useStaticQuery(query);
+  } = useStaticQuery(query_info);
 
   const {
     nombre,
