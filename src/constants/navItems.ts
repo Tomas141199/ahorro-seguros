@@ -5,6 +5,6 @@ interface Link {
 
 export const navItems: Link[] = [
   { nombre: "INICIO", path: "/" },
-  { nombre: "CONÓCEME", path: "sobre" },
-  { nombre: "COTIZAR", path: "cotizar" },
+  { nombre: "CONÓCEME", path: "/sobre" },
+  { nombre: "COTIZAR", path: "/cotizar" },
 ];

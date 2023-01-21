@@ -65,7 +65,7 @@ export function BoxLinks() {
           to={path}
           style={{ textDecoration: "none", marginLeft: 10 }}
         >
-          {path === "cotizar" ? (
+          {path === "/cotizar" ? (
             <CotizarAction {...{ nombre }} />
           ) : (
             <Button>{nombre}</Button>

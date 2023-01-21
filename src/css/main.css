@@ -1,5 +1,5 @@
 .marquee-img {
-    width: 8%;
+    width: 6%;
     aspect-ratio: 3/2;
     object-fit: contain;
     mix-blend-mode: color-burn;
@@ -8,6 +8,14 @@
     margin-top: 5px;
     margin-bottom: 5px;
 }
+
+@media (max-width:600px) {
+    .marquee-img {
+        width: 5%;
+        margin-left: 30px;
+        margin-right: 30px;
+    }
+  }
 
 .before{
     position: relative;
