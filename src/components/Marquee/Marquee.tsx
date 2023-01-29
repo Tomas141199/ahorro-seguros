@@ -30,7 +30,7 @@ const ComponentName = () => {
       component={"section"}
       mt={12}
       sx={{
-        bgcolor: grey.A100,
+        bgcolor: "#F3F5F6",
       }}
     >
       <Marquee speed={10}>

@@ -51,7 +51,7 @@ export function LogoNav() {
       component="div"
       sx={{ flexGrow: 1, display: { xs: "none", sm: "block" } }}
     >
-      <img src={logo} alt="" width={200} />
+      <img src={logo} alt="ahorro seguros logo" width={200} />
     </Typography>
   );
 }

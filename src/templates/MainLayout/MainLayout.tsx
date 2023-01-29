@@ -4,6 +4,7 @@ import CssBaseline from "@mui/material/CssBaseline";
 import Toolbar from "@mui/material/Toolbar";
 import { Appbar } from "../../components/Appbar";
 import { DrawerApp } from "./helpers";
+import { Footer } from "../../components";
 
 interface Props {
   window?: () => Window;
@@ -22,7 +23,7 @@ export default function MainLayout(props: Props) {
     window !== undefined ? () => window().document.body : undefined;
 
   return (
-    <>
+    <Box sx={{ minHeight: "100vh", display: "flex", flexDirection: "column" }}>
       <Box sx={{ display: "flex" }}>
         <CssBaseline />
         <Appbar handleDrawerToggle={handleDrawerToggle} {...props} />
@@ -36,6 +37,7 @@ export default function MainLayout(props: Props) {
           {children}
         </Box>
       </Box>
-    </>
+      <Footer />
+    </Box>
   );
 }

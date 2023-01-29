@@ -1,4 +1,3 @@
-import { createTheme } from "@mui/material";
 import type { GatsbyConfig } from "gatsby";
 
 require("dotenv").config({
@@ -37,6 +36,12 @@ const config: GatsbyConfig = {
     {
       resolve: `gatsby-theme-material-ui`,
       options: {},
+    },
+    {
+      resolve: "gatsby-plugin-manifest",
+      options: {
+        icon: "src/images/icon-page.webp",
+      },
     },
     // "gatsby-plugin-top-layout",
   ],

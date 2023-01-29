@@ -1,7 +1,7 @@
 import React from "react";
 import { useFormik } from "formik";
 import * as yup from "yup";
-import { MainLayout } from "../templates";
+import { MainLayout, SEO } from "../templates";
 import TextField from "@mui/material/TextField";
 import Button from "@mui/material/Button";
 import Container from "@mui/material/Container";
@@ -12,7 +12,7 @@ import FormControlLabel from "@mui/material/FormControlLabel";
 import Radio from "@mui/material/Radio";
 import FormHelperText from "@mui/material/FormHelperText";
 import { red } from "@mui/material/colors";
-import HomeRoundedIcon from "@mui/icons-material/HomeRounded";
+import { HeadFC } from "gatsby";
 
 const validationSchema = yup.object({
   nombre: yup.string().required("El nombre es obligatorio"),
@@ -37,6 +37,22 @@ const Cotizar = () => {
     validationSchema: validationSchema,
     onSubmit: (values) => {
       alert(JSON.stringify(values, null, 2));
+
+      const formData = new FormData();
+      formData.append("nombre", values.nombre);
+      formData.append("email", values.email);
+      formData.append("tel", values.telefono);
+      formData.append("tipo", values.seguro);
+      formData.append("presupuesto", values.presupuesto);
+
+      window.location.replace("/tenkiu");
+
+      // fetch("https://getform.io/f/1ba51b12-9df1-47c0-a3cb-2ecdfff766d6", {
+      //   method: "POST",
+      //   body: formData,
+      // })
+      //   .then((response) => console.log(response))
+      //   .catch((error) => console.log(error));
     },
   });
 
@@ -92,7 +108,7 @@ const Cotizar = () => {
           </Grid>
 
           <Grid container mt={3}>
-            <Grid item sm={12} md={9}>
+            <Grid item sm={12} md={8}>
               <FormLabel id="demo-row-radio-buttons-group-label">
                 Tipo de seguro:
               </FormLabel>
@@ -133,7 +149,7 @@ const Cotizar = () => {
                 {formik.touched.seguro && formik.errors.seguro}
               </FormHelperText>
             </Grid>
-            <Grid item sm={12} md={3}>
+            <Grid item sm={12} md={4}>
               <TextField
                 id="presupuesto"
                 label="presupuesto"
@@ -163,3 +179,5 @@ const Cotizar = () => {
 };
 
 export default Cotizar;
+
+export const Head: HeadFC = () => <SEO title="Cotiza ahora" />;
