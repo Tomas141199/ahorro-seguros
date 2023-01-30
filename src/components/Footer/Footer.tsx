@@ -23,7 +23,11 @@ const Footer = () => {
       justifyContent={"space-between"}
       direction={{ xs: "column", sm: "row" }}
     >
-      <Stack direction={"row"} spacing={1} alignItems="center">
+      <Stack
+        direction={{ xs: "column", md: "row" }}
+        spacing={1}
+        alignItems="center"
+      >
         <Box>
           <img src={Logo} width={180} alt="logo ahorro seguros" />
         </Box>
@@ -61,7 +65,8 @@ const Footer = () => {
             <FacebookIcon style={{ color: "#2050b3" }} />
             <Typography
               component={"a"}
-              href="facebook.com"
+              href="https://www.facebook.com/profile.php?id=1517430488&mibextid=LQQJ4d"
+              target="_blank"
               style={{
                 textDecoration: "none",
                 color: "black",
@@ -74,7 +79,8 @@ const Footer = () => {
             <InstagramIcon style={{ color: "#E1306C" }} />
             <Typography
               component={"a"}
-              href="facebook.com"
+              target="_blank"
+              href="https://instagram.com/robert_lagunes?igshid=YmMyMTA2M2Y="
               style={{ textDecoration: "none", color: "black" }}
             >
               Roberto Lagunes Cabrera
@@ -85,7 +91,8 @@ const Footer = () => {
             <LinkedInIcon style={{ color: "#2050b3" }} />
             <Typography
               component={"a"}
-              href="https://www.facebook.com/"
+              target="_blank"
+              href="https://www.linkedin.com/in/roberto-lagunes-cabrera-09a74b261"
               style={{ textDecoration: "none", color: "black" }}
             >
               Roberto Lagunes Cabrera

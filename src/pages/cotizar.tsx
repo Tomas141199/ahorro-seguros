@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 import { useFormik } from "formik";
 import * as yup from "yup";
 import { MainLayout, SEO } from "../templates";
@@ -13,19 +13,24 @@ import Radio from "@mui/material/Radio";
 import FormHelperText from "@mui/material/FormHelperText";
 import { red } from "@mui/material/colors";
 import { HeadFC } from "gatsby";
-
-const validationSchema = yup.object({
-  nombre: yup.string().required("El nombre es obligatorio"),
-  telefono: yup.string().required("El telefono es requerido"),
-  email: yup
-    .string()
-    .email("Ingrese un email valido")
-    .required("El correo es obligatorio"),
-  seguro: yup.string().required("Seleccione un tipo de seguro"),
-  presupuesto: yup.number().required("El presupuesto es obligatorio"),
-});
+import { Automovil, Hogar, Salud, Vida } from "../components/Forms";
+import Otro from "../components/Forms/Otro/Otro";
 
 const Cotizar = () => {
+  const [subValidation, setSubValidation] = useState({});
+
+  const validationSchema = yup.object({
+    nombre: yup.string().required("El nombre es obligatorio"),
+    telefono: yup.string().required("El telefono es requerido"),
+    email: yup
+      .string()
+      .email("Ingrese un email valido")
+      .required("El correo es obligatorio"),
+    seguro: yup.string().required("Seleccione un tipo de seguro"),
+    presupuesto: yup.number().required("El presupuesto es obligatorio"),
+    ...subValidation,
+  });
+
   const formik = useFormik({
     initialValues: {
       nombre: "",
@@ -33,6 +38,21 @@ const Cotizar = () => {
       email: "",
       seguro: "",
       presupuesto: "",
+      marca: "",
+      modelo: "",
+      anio: "",
+      edad: "",
+      cp: "",
+      descripcionAuto: "",
+      superficie: "",
+      vivienda: "",
+      valor: "",
+      descripcionVivienda: "",
+      sexo: "",
+      enfermedad: "",
+      comentarios: "",
+      vida: "",
+      extra: "",
     },
     validationSchema: validationSchema,
     onSubmit: (values) => {
@@ -55,6 +75,66 @@ const Cotizar = () => {
       //   .catch((error) => console.log(error));
     },
   });
+
+  const handleSeguro = (e: any) => {
+    console.log(e.target.value);
+    const tipo = e.target.value;
+    switch (tipo) {
+      case "automovil":
+        {
+          setSubValidation({
+            marca: yup.string().required("La marca es obligatoria"),
+            modelo: yup.string().required("El modelo es obligatorio"),
+            anio: yup.string().required("El año es obligatorio"),
+            edad: yup.number().required("La edad es obligatoria"),
+            cp: yup.number().required("El código postal es obligatorio"),
+            descripcionAuto: yup
+              .string()
+              .required("La descripción es obligatoria"),
+          });
+        }
+        break;
+      case "hogar":
+        {
+          setSubValidation({
+            superficie: yup.number().required("La superficie es obligatoria"),
+            vivienda: yup
+              .string()
+              .required("El tipo de vivienda es obligatoria"),
+            valor: yup.number().required("El valor aproximado es obligatorio"),
+            cp: yup.number().required("El código postal es obligatorio"),
+            descripcionVivienda: yup.string(),
+          });
+        }
+        break;
+      case "salud":
+        {
+          setSubValidation({
+            sexo: yup.string().required("El sexo es obligatorio"),
+            edad: yup.number().required("La edad es obligatoria"),
+            cp: yup.number().required("El código postal es obligatorio"),
+            enfermedad: yup.string().required("Este campo es obligatorio"),
+          });
+        }
+        break;
+      case "vida":
+        {
+          setSubValidation({
+            vida: yup.string().required("Los detalles son obligatorios"),
+          });
+        }
+        break;
+      case "otros":
+        {
+          setSubValidation({
+            extra: yup.string().required("Los detalles son obligatorios"),
+          });
+        }
+        break;
+      default:
+        setSubValidation({});
+    }
+  };
 
   return (
     <MainLayout>
@@ -117,7 +197,10 @@ const Cotizar = () => {
                 aria-labelledby="demo-row-radio-buttons-group-label"
                 name="seguro"
                 value={formik.values.seguro}
-                onChange={formik.handleChange}
+                onChange={(e) => {
+                  formik.handleChange(e);
+                  handleSeguro(e);
+                }}
               >
                 <FormControlLabel
                   value="automovil"
@@ -140,7 +223,7 @@ const Cotizar = () => {
                   label="Vida"
                 />
                 <FormControlLabel
-                  value="otro"
+                  value="otros"
                   control={<Radio />}
                   label="Otros"
                 />
@@ -169,7 +252,19 @@ const Cotizar = () => {
               />
             </Grid>
           </Grid>
-          <Button variant="contained" color="success" type="submit">
+          {formik.values.seguro === "automovil" && (
+            <Automovil formik={formik} />
+          )}
+          {formik.values.seguro === "hogar" && <Hogar formik={formik} />}
+          {formik.values.seguro === "salud" && <Salud formik={formik} />}
+          {formik.values.seguro === "vida" && <Vida formik={formik} />}
+          {formik.values.seguro === "otros" && <Otro formik={formik} />}
+          <Button
+            variant="contained"
+            color="success"
+            type="submit"
+            sx={{ marginTop: 4 }}
+          >
             Enviar
           </Button>
         </form>
