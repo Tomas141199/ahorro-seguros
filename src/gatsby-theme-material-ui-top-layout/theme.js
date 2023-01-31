@@ -19,9 +19,6 @@ const theme = createTheme({
     },
     mode: "light",
   },
-  typography: {
-    fontFamily: ["Roboto", "sans-serif"].join(","),
-  },
 });
 
 theme.typography.h3 = {
