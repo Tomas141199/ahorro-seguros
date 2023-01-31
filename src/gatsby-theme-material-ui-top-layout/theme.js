@@ -20,7 +20,7 @@ const theme = createTheme({
     mode: "light",
   },
   typography: {
-    fontFamily: ["Montserrat", "sans-serif"].join(","),
+    fontFamily: ["Roboto", "sans-serif"].join(","),
   },
 });
 
