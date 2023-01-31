@@ -22,10 +22,10 @@ const Otro: FC<Props> = ({ formik }) => {
         variant="filled"
         fullWidth
         margin="normal"
-        value={formik.values.comentarios}
+        value={formik.values.extra}
         onChange={formik.handleChange}
-        error={formik.touched.comentarios && Boolean(formik.errors.comentarios)}
-        helperText={formik.touched.comentarios && formik.errors.comentarios}
+        error={formik.touched.extra && Boolean(formik.errors.extra)}
+        helperText={formik.touched.extra && formik.errors.extra}
       />
     </Grid>
   );

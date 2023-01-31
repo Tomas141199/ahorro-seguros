@@ -12,7 +12,7 @@ const Automovil: FC<Props> = ({ formik }) => {
       <Grid item xs={12} md={3}>
         <TextField
           id="marca"
-          label="marca"
+          label="Marca"
           type="text"
           variant="filled"
           fullWidth
@@ -26,7 +26,7 @@ const Automovil: FC<Props> = ({ formik }) => {
       <Grid item xs={12} md={3}>
         <TextField
           id="modelo"
-          label="modelo"
+          label="Modelo"
           type="tel"
           variant="filled"
           fullWidth
@@ -40,7 +40,7 @@ const Automovil: FC<Props> = ({ formik }) => {
       <Grid item xs={12} md={2}>
         <TextField
           id="anio"
-          label="año"
+          label="Año"
           type="number"
           variant="filled"
           fullWidth
@@ -54,7 +54,7 @@ const Automovil: FC<Props> = ({ formik }) => {
       <Grid item xs={12} md={2}>
         <TextField
           id="edad"
-          label="edad"
+          label="Edad"
           type="number"
           variant="filled"
           fullWidth

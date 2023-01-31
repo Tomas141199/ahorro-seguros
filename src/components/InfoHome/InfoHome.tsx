@@ -1,5 +1,5 @@
 import * as React from "react";
-import { useStaticQuery, graphql } from "gatsby";
+import { useStaticQuery, graphql, Link } from "gatsby";
 import Container from "@mui/material/Container";
 import Avatar from "@mui/material/Avatar";
 import { Button, Rating, Stack, Typography } from "@mui/material";
@@ -86,7 +86,7 @@ const InfoHome = () => {
                 ELIGE
               </Typography>
               <Typography
-                variant={"h3"}
+                variant={"h2"}
                 component={"h2"}
                 fontWeight={"bold"}
                 color="primary"
@@ -132,6 +132,21 @@ const InfoHome = () => {
                 </Button>
               </Stack>
             </Stack>
+            <Link
+              to="/sobre"
+              style={{ marginLeft: "auto", marginRight: "auto" }}
+            >
+              <Button
+                sx={{
+                  marginTop: 2,
+                  width: "auto",
+                }}
+                variant="contained"
+                color="primary"
+              >
+                Conóceme
+              </Button>
+            </Link>
           </Stack>
         </Grid>
       </Grid>

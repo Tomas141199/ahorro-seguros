@@ -15,7 +15,7 @@ export default function Awards() {
   return (
     <>
       <Swiper
-        slidesPerView={2}
+        slidesPerView={1}
         spaceBetween={30}
         pagination={{
           clickable: true,
@@ -45,6 +45,7 @@ export default function Awards() {
               <CardMedia
                 component="img"
                 height="140"
+                width={"100%"}
                 image="https://res.cloudinary.com/my-account-145/image/upload/v1674084109/axa_logo_solid_rgb_1_bb8db7acd6.png"
                 alt="green iguana"
               />

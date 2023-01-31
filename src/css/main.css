@@ -1,64 +1,118 @@
 .marquee-img {
-    width: 6%;
-    aspect-ratio: 3/2;
-    object-fit: contain;
-    mix-blend-mode: color-burn;
-    margin-left: 80px;
-    margin-right: 80px;
-    margin-top: 5px;
-    margin-bottom: 5px;
+  width: 6%;
+  aspect-ratio: 3/2;
+  object-fit: contain;
+  mix-blend-mode: color-burn;
+  margin-left: 80px;
+  margin-right: 80px;
+  margin-top: 5px;
+  margin-bottom: 5px;
 }
 
-@media (max-width:600px) {
-    .marquee-img {
-        width: 5%;
-        margin-left: 30px;
-        margin-right: 30px;
-    }
+@media (max-width: 600px) {
+  .marquee-img {
+    width: 5%;
+    margin-left: 30px;
+    margin-right: 30px;
   }
-
-.before{
-    position: relative;
 }
 
-.before:after{
-    content: "SEGUROS";
-    position: absolute;
-    color: #FF3E00;
-    font-size: 1.2rem;
-    bottom: 0;
+.before {
+  position: relative;
 }
 
+.before:after {
+  content: "SEGUROS";
+  position: absolute;
+  color: #ff3e00;
+  font-size: 1.2rem;
+  bottom: 0;
+}
 
-@media (max-width:600px) {
-    .before:after{
-        font-size: 0.8rem;
-        bottom: -2px;
-    }
+@media (max-width: 600px) {
+  .before:after {
+    font-size: 0.8rem;
+    bottom: -2px;
   }
+}
 
-  .swiper {
-    width: 100%;
-    height: 100%;
+.swiper {
+  width: 100%;
+  height: 100%;
+}
+
+.swiper-slide {
+  text-align: center;
+  font-size: 18px;
+  background: #fff;
+
+  /* Center slide text vertically */
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: -webkit-flex;
+  display: flex;
+  -webkit-box-pack: center;
+  -ms-flex-pack: center;
+  -webkit-justify-content: center;
+  justify-content: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  -webkit-align-items: center;
+  align-items: center;
+}
+
+.wrapper {
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: #eee;
+  flex-direction: column;
+}
+.checkmark__circle {
+  stroke-dasharray: 166;
+  stroke-dashoffset: 166;
+  stroke-width: 2;
+  stroke-miterlimit: 10;
+  stroke: #7ac142;
+  fill: none;
+  animation: stroke 0.6s cubic-bezier(0.65, 0, 0.45, 1) forwards;
+}
+.checkmark {
+  width: 56px;
+  height: 56px;
+  border-radius: 50%;
+  display: block;
+  stroke-width: 2;
+  stroke: #fff;
+  stroke-miterlimit: 10;
+  margin: 10% auto;
+  box-shadow: inset 0px 0px 0px #7ac142;
+  animation: fill 0.4s ease-in-out 0.4s forwards,
+    scale 0.3s ease-in-out 0.9s both;
+}
+.checkmark__check {
+  transform-origin: 50% 50%;
+  stroke-dasharray: 48;
+  stroke-dashoffset: 48;
+  animation: stroke 0.3s cubic-bezier(0.65, 0, 0.45, 1) 0.8s forwards;
+}
+@keyframes stroke {
+  100% {
+    stroke-dashoffset: 0;
   }
-  
-  .swiper-slide {
-    text-align: center;
-    font-size: 18px;
-    background: #fff;
-  
-    /* Center slide text vertically */
-    display: -webkit-box;
-    display: -ms-flexbox;
-    display: -webkit-flex;
-    display: flex;
-    -webkit-box-pack: center;
-    -ms-flex-pack: center;
-    -webkit-justify-content: center;
-    justify-content: center;
-    -webkit-box-align: center;
-    -ms-flex-align: center;
-    -webkit-align-items: center;
-    align-items: center;
+}
+@keyframes scale {
+  0%,
+  100% {
+    transform: none;
   }
-  
+  50% {
+    transform: scale3d(1.1, 1.1, 1);
+  }
+}
+@keyframes fill {
+  100% {
+    box-shadow: inset 0px 0px 0px 30px #7ac142;
+  }
+}

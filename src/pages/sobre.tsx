@@ -4,7 +4,7 @@ import Tab from "@mui/material/Tab";
 import Typography from "@mui/material/Typography";
 import Box from "@mui/material/Box";
 import { MainLayout, SEO } from "../templates";
-import { Button, Container, Paper } from "@mui/material";
+import { Avatar, Button, Container, Paper } from "@mui/material";
 import { grey } from "@mui/material/colors";
 import { Stack } from "@mui/system";
 import LocalPhoneIcon from "@mui/icons-material/LocalPhone";
@@ -50,7 +50,7 @@ export default function BasicTabs() {
 
   return (
     <MainLayout>
-      <Container component={"div"} maxWidth="sm" sx={{ marginTop: 10 }}>
+      <Container component={"div"} maxWidth="md" sx={{ marginTop: 10 }}>
         <Box sx={{ width: "100%" }}>
           <Box sx={{ borderBottom: 1, borderColor: "divider" }}>
             <Tabs
@@ -67,22 +67,44 @@ export default function BasicTabs() {
             </Tabs>
           </Box>
           <TabPanel value={value} index={0}>
-            <Typography component={"h1"} variant="h6">
-              Roberto Lagunes Cabrera
-            </Typography>
-            <Typography component={"h2"} color={grey[400]}>
-              Agente Profesional de Seguros
-            </Typography>
-            <Typography component={"p"} marginTop={4}>
-              Actualmente soy Agente Profesional de Seguros. Estoy certificado
-              ante la comisión Nacional de Seguros y Finanzas, con cédula
-              c334854. Anteriormente me gradué con honeres como Master en
-              Comportamiento Humano y Liderazgo con Cédula 09155084, así mismo
-              tengo la Licenciatura en contaduría Pública con Cédula 3139374, Mi
-              intención es fomentar la cultura de estar protegidos tanto como
-              individualmente como familia, así como nuestro patrimonio, esto a
-              travez de la industrua Aseguradora.
-            </Typography>
+            <Stack
+              direction={{ xs: "column", md: "row" }}
+              justifyContent="center"
+              alignItems={"center"}
+              gap={3}
+            >
+              <Box>
+                <Typography component={"h1"} variant="h6">
+                  Roberto Lagunes Cabrera
+                </Typography>
+                <Typography component={"h2"} color={grey[400]}>
+                  Agente Profesional de Seguros
+                </Typography>
+                <Typography component={"p"} marginTop={4} textAlign="left">
+                  Actualmente soy Agente Profesional de Seguros. Estoy
+                  certificado ante la comisión Nacional de Seguros y Finanzas,
+                  con cédula c334854. Anteriormente me gradué con honeres como
+                  Master en Comportamiento Humano y Liderazgo con Cédula
+                  09155084, así mismo tengo la Licenciatura en contaduría
+                  Pública con Cédula 3139374. Mi intención es fomentar la
+                  cultura de estar protegidos tanto como individualmente como
+                  familia, así como nuestro patrimonio, esto a travez de la
+                  industrua Aseguradora.
+                </Typography>
+              </Box>
+              <Avatar
+                alt="Roberto Lagunes Profile"
+                sx={{
+                  backgroundColor: "#0773c0",
+                  width: 200,
+                  height: 200,
+                  "& .MuiAvatar-img": { width: 120 },
+                }}
+                src={
+                  "https://res.cloudinary.com/my-account-145/image/upload/v1674012856/profile_cc9f6a948e.png"
+                }
+              />
+            </Stack>
           </TabPanel>
 
           <TabPanel value={value} index={1}>

@@ -15,6 +15,7 @@ import { red } from "@mui/material/colors";
 import { HeadFC } from "gatsby";
 import { Automovil, Hogar, Salud, Vida } from "../components/Forms";
 import Otro from "../components/Forms/Otro/Otro";
+import Typography from "@mui/material/Typography";
 
 const Cotizar = () => {
   const [subValidation, setSubValidation] = useState({});
@@ -56,23 +57,73 @@ const Cotizar = () => {
     },
     validationSchema: validationSchema,
     onSubmit: (values) => {
-      alert(JSON.stringify(values, null, 2));
-
       const formData = new FormData();
-      formData.append("nombre", values.nombre);
-      formData.append("email", values.email);
-      formData.append("tel", values.telefono);
-      formData.append("tipo", values.seguro);
-      formData.append("presupuesto", values.presupuesto);
+      formData.append("Nombre", values.nombre);
+      formData.append("Correo", values.email);
+      formData.append("Telefono", values.telefono);
+      formData.append("Tipo", values.seguro);
+      formData.append("Presupuesto", values.presupuesto);
 
-      window.location.replace("/tenkiu");
+      switch (values.seguro) {
+        case "automovil":
+          {
+            formData.append("Marca del vehículo", values.marca);
+            formData.append("Modelo del vehículo", values.modelo);
+            formData.append("Año del modelo", values.anio);
+            formData.append("Edad del propetario", values.edad);
+            formData.append("Código Postal", values.cp);
+            formData.append("Descripción del vehículo", values.descripcionAuto);
+            console.log("Entre en vehiculo");
+          }
+          break;
 
-      // fetch("https://getform.io/f/1ba51b12-9df1-47c0-a3cb-2ecdfff766d6", {
-      //   method: "POST",
-      //   body: formData,
-      // })
-      //   .then((response) => console.log(response))
-      //   .catch((error) => console.log(error));
+        case "hogar":
+          {
+            formData.append("Superficie de la vivienda", values.superficie);
+            formData.append("Tipo de vivienda", values.vivienda);
+            formData.append("Valor aproximado de la vivienda", values.valor);
+            formData.append("Código Postal", values.cp);
+            formData.append(
+              "Descripción de la vivienda",
+              values.descripcionVivienda
+            );
+          }
+          break;
+
+        case "salud":
+          {
+            formData.append("Sexo del solicitante", values.sexo);
+            formData.append("Edad del solicitante", values.edad);
+            formData.append("Código Postal", values.cp);
+            formData.append("Enfermedad", values.enfermedad);
+            formData.append("Comentarios", values.comentarios);
+          }
+          break;
+
+        case "vida":
+          {
+            formData.append("Tipo de servicio", values.vida);
+            formData.append("Comentarios extra", values.comentarios);
+          }
+          break;
+        case "otros":
+          {
+            formData.append("Servicio solicitado", values.extra);
+          }
+          break;
+
+        default:
+          break;
+      }
+
+      fetch("https://getform.io/f/45fc1cf4-cbf0-47ce-a906-f6f8706ba327", {
+        method: "POST",
+        body: formData,
+      })
+        .then((response) => {
+          window.location.replace("/respuesta");
+        })
+        .catch((error) => console.log(error));
     },
   });
 
@@ -139,12 +190,15 @@ const Cotizar = () => {
   return (
     <MainLayout>
       <Container style={{ marginTop: 30, padding: 5 }} maxWidth={"md"}>
+        <Typography component={"h1"} variant="h4" color={"primary"} mb={2}>
+          PONTE EN CONTACTO CONMIGO PARA UNA ASESORÍA PERSONAL
+        </Typography>
         <form onSubmit={formik.handleSubmit}>
           <Grid container spacing={2} columnSpacing={2}>
             <Grid item xs={12} md={4}>
               <TextField
                 id="nombre"
-                label="nombre"
+                label="Nombre"
                 type="text"
                 variant="filled"
                 fullWidth
@@ -158,7 +212,7 @@ const Cotizar = () => {
             <Grid item xs={12} md={4}>
               <TextField
                 id="telefono"
-                label="telefono"
+                label="Telefono"
                 type="tel"
                 variant="filled"
                 fullWidth
@@ -174,7 +228,7 @@ const Cotizar = () => {
             <Grid item xs={12} md={4}>
               <TextField
                 id="email"
-                label="email"
+                label="Correo"
                 type="email"
                 variant="filled"
                 fullWidth
@@ -235,7 +289,7 @@ const Cotizar = () => {
             <Grid item sm={12} md={4}>
               <TextField
                 id="presupuesto"
-                label="presupuesto"
+                label="Presupuesto"
                 type="number"
                 variant="filled"
                 fullWidth

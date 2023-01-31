@@ -17,7 +17,7 @@ const Footer = () => {
       sx={{
         bgcolor: "white",
         marginTop: "auto",
-        padding: "5px",
+        paddingX: 10,
       }}
       alignItems={"center"}
       justifyContent={"space-between"}
