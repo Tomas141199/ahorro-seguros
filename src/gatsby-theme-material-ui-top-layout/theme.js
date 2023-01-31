@@ -19,6 +19,9 @@ const theme = createTheme({
     },
     mode: "light",
   },
+  typography: {
+    fontFamily: ["Montserrat", "sans-serif"].join(","),
+  },
 });
 
 theme.typography.h3 = {
