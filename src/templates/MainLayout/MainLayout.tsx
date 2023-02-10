@@ -4,7 +4,7 @@ import CssBaseline from "@mui/material/CssBaseline";
 import Toolbar from "@mui/material/Toolbar";
 import { Appbar } from "../../components/Appbar";
 import { DrawerApp } from "./helpers";
-import { Footer } from "../../components";
+import Footer from "../../components/Footer/Footer";
 
 interface Props {
   window?: () => Window;

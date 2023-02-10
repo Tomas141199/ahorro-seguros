@@ -1,14 +1,14 @@
-import Box from "@mui/material/Box/Box";
-import React from "react";
+import * as React from "react";
 import Stack from "@mui/material/Stack";
+import Box from "@mui/material/Box";
 import Logo from "../../images/logo-footer.png";
-import Button from "@mui/material/Button";
 import LocalPhoneIcon from "@mui/icons-material/LocalPhone";
 import MailOutlineIcon from "@mui/icons-material/MailOutline";
 import FacebookIcon from "@mui/icons-material/Facebook";
 import LinkedInIcon from "@mui/icons-material/LinkedIn";
 import InstagramIcon from "@mui/icons-material/Instagram";
-import { Typography } from "@material-ui/core";
+import Button from "@mui/material/Button";
+import Typography from "@mui/material/Typography";
 
 const Footer = () => {
   return (
@@ -59,6 +59,7 @@ const Footer = () => {
           </Stack>
         </Stack>
       </Stack>
+
       <Stack>
         <Stack spacing={1} direction="column">
           <Stack direction={"row"}>

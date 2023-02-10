@@ -1,3 +1,4 @@
+import { createTheme } from "@mui/material";
 import type { GatsbyConfig } from "gatsby";
 
 require("dotenv").config({

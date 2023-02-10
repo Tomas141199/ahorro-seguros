@@ -2,7 +2,6 @@ import * as React from "react";
 import { useStaticQuery, graphql } from "gatsby";
 import Marquee from "react-fast-marquee";
 import { Box } from "@mui/material";
-import { grey } from "@mui/material/colors";
 
 const query = graphql`
   query {

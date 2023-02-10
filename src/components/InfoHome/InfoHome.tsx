@@ -49,15 +49,14 @@ const InfoHome = () => {
 
   return (
     <Container maxWidth="sm" sx={{ marginTop: "60px", marginX: "auto" }}>
-      <Grid container spacing={{ xs: 2, md: -16 }}>
+      <Grid container spacing={{ xs: 2 }}>
         <Grid item xs={2}>
           <Avatar
             alt="Roberto Lagunes Profile"
             sx={{
-              backgroundColor: "#0773c0",
-              width: 60,
-              height: 60,
-              "& .MuiAvatar-img": { width: 35 },
+              width: 90,
+              height: 90,
+              "& .MuiAvatar-img": { width: 90 },
             }}
             src={url}
           />
@@ -134,7 +133,11 @@ const InfoHome = () => {
             </Stack>
             <Link
               to="/sobre"
-              style={{ marginLeft: "auto", marginRight: "auto" }}
+              style={{
+                marginLeft: "auto",
+                marginRight: "auto",
+                textDecoration: "none",
+              }}
             >
               <Button
                 sx={{
