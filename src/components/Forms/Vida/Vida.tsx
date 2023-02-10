@@ -31,8 +31,17 @@ const Vida: FC<Props> = ({ formik }) => {
             control={<Radio />}
             label="Protección"
           />
-          <FormControlLabel value="ahorro" control={<Radio />} label="Ahorro" />
+          <FormControlLabel
+            value="ahorro/inversion"
+            control={<Radio />}
+            label="Ahorro/Inversión"
+          />
           <FormControlLabel value="retiro" control={<Radio />} label="Retiro" />
+          <FormControlLabel
+            value="universidad"
+            control={<Radio />}
+            label="Universidad"
+          />
         </RadioGroup>
         <FormHelperText sx={{ color: red[800], textAlign: "left" }}>
           {formik.touched.vida && formik.errors.vida}

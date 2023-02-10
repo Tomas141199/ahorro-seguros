@@ -28,7 +28,6 @@ const Cotizar = () => {
       .email("Ingrese un email valido")
       .required("El correo es obligatorio"),
     seguro: yup.string().required("Seleccione un tipo de seguro"),
-    presupuesto: yup.number().required("El presupuesto es obligatorio"),
     ...subValidation,
   });
 
@@ -54,6 +53,7 @@ const Cotizar = () => {
       comentarios: "",
       vida: "",
       extra: "",
+      tipo: "",
     },
     validationSchema: validationSchema,
     onSubmit: (values) => {
@@ -68,12 +68,12 @@ const Cotizar = () => {
         case "automovil":
           {
             formData.append("Marca del vehículo", values.marca);
-            formData.append("Modelo del vehículo", values.modelo);
+            formData.append("Versión del vehículo", values.modelo);
             formData.append("Año del modelo", values.anio);
             formData.append("Edad del propetario", values.edad);
             formData.append("Código Postal", values.cp);
             formData.append("Descripción del vehículo", values.descripcionAuto);
-            console.log("Entre en vehiculo");
+            formData.append("Tipo de vehículo", values.tipo);
           }
           break;
 
@@ -115,20 +115,19 @@ const Cotizar = () => {
         default:
           break;
       }
-
-      fetch("https://getform.io/f/45fc1cf4-cbf0-47ce-a906-f6f8706ba327", {
-        method: "POST",
-        body: formData,
-      })
-        .then((response) => {
-          window.location.replace("/respuesta");
-        })
-        .catch((error) => console.log(error));
+      console.log(values);
+      // fetch("https://getform.io/f/45fc1cf4-cbf0-47ce-a906-f6f8706ba327", {
+      //   method: "POST",
+      //   body: formData,
+      // })
+      //   .then((response) => {
+      //     window.location.replace("/respuesta");
+      //   })
+      //   .catch((error) => console.log(error));
     },
   });
 
   const handleSeguro = (e: any) => {
-    console.log(e.target.value);
     const tipo = e.target.value;
     switch (tipo) {
       case "automovil":
@@ -139,6 +138,7 @@ const Cotizar = () => {
             anio: yup.string().required("El año es obligatorio"),
             edad: yup.number().required("La edad es obligatoria"),
             cp: yup.number().required("El código postal es obligatorio"),
+            tipo: yup.string().required("El tipo es obligatorio"),
             descripcionAuto: yup
               .string()
               .required("La descripción es obligatoria"),
@@ -190,7 +190,13 @@ const Cotizar = () => {
   return (
     <MainLayout>
       <Container style={{ marginTop: 30, padding: 5 }} maxWidth={"md"}>
-        <Typography component={"h1"} variant="h4" color={"primary"} mb={2}>
+        <Typography
+          component={"h1"}
+          variant="h4"
+          color={"primary"}
+          mb={2}
+          sx={{ fontWeight: 500 }}
+        >
           PONTE EN CONTACTO CONMIGO PARA UNA ASESORÍA PERSONAL
         </Typography>
         <form onSubmit={formik.handleSubmit}>
@@ -317,7 +323,7 @@ const Cotizar = () => {
             variant="contained"
             color="success"
             type="submit"
-            sx={{ marginTop: 4 }}
+            sx={{ marginTop: 4, display: "block", marginLeft: "auto" }}
           >
             Enviar
           </Button>

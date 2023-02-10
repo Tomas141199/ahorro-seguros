@@ -25,11 +25,10 @@ const respuesta = () => {
         />
       </svg>
       <Typography variant="h6" color="black" display={"block"}>
-        Tu respuesta ha sido enviada correctamente
+        Tu solicitud ha sido enviada correctamente
       </Typography>
       <Typography>
-        En las proximas horas me pondre en contacto contigo para atender tu
-        petición
+        Enseguida me pondré en contacto contigo para atender tu petición
       </Typography>
       <Link
         to="/"
@@ -37,7 +36,7 @@ const respuesta = () => {
           color: "#00477A",
         }}
       >
-        Ir a inicio
+        Ir al inicio
       </Link>
     </div>
   );

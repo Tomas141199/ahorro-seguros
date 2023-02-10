@@ -63,7 +63,7 @@ export default function BasicTabs() {
             >
               <Tab label="¿Quién soy?" {...a11yProps(0)} />
               <Tab label="Experiencia" {...a11yProps(1)} />
-              <Tab label="Reconocimientos" {...a11yProps(2)} />
+              <Tab label="Certificaciones" {...a11yProps(2)} />
             </Tabs>
           </Box>
           <TabPanel value={value} index={0}>
@@ -82,14 +82,14 @@ export default function BasicTabs() {
                 </Typography>
                 <Typography component={"p"} marginTop={4} textAlign="left">
                   Actualmente soy Agente Profesional de Seguros. Estoy
-                  certificado ante la comisión Nacional de Seguros y Finanzas,
-                  con cédula c334854. Anteriormente me gradué con honeres como
+                  certificado ante la Comisión Nacional de Seguros y Finanzas,
+                  con cédula c334854. Anteriormente me gradué con honores como
                   Master en Comportamiento Humano y Liderazgo con Cédula
-                  09155084, así mismo tengo la Licenciatura en contaduría
-                  Pública con Cédula 3139374. Mi intención es fomentar la
+                  09155084, así mismo tengo la Licenciatura en Contaduría
+                  Pública con Cédula 3139374, Mi intención es fomentar la
                   cultura de estar protegidos tanto como individualmente como
-                  familia, así como nuestro patrimonio, esto a travez de la
-                  industrua Aseguradora.
+                  familia, así como nuestro patrimonio, esto a través de la
+                  industria Aseguradora.
                 </Typography>
               </Box>
               <Avatar
@@ -119,7 +119,7 @@ export default function BasicTabs() {
               alignItems={"center"}
             >
               <ArrowRightIcon />
-              Inicie como Ejecutivo de Siniestros contra Autos 2015-2019
+              Inicie como Ejecutivo de Siniestros de Autos 2015-2019
             </Typography>
             <Typography
               component={Stack}
@@ -149,7 +149,7 @@ export default function BasicTabs() {
               alignItems={"center"}
             >
               <ArrowRightIcon />
-              Último puesto: Gerente sucursal (varias) del 2006-2015
+              Último puesto: Gerente sucursal (varias) 2006-2015
             </Typography>
 
             <Typography

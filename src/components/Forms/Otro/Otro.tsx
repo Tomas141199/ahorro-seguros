@@ -14,20 +14,28 @@ interface Props {
 
 const Otro: FC<Props> = ({ formik }) => {
   return (
-    <Grid item xs={12}>
-      <TextField
-        id="extra"
-        label="Sea lo más especifico"
-        type="text"
-        variant="filled"
-        fullWidth
-        margin="normal"
-        value={formik.values.extra}
-        onChange={formik.handleChange}
-        error={formik.touched.extra && Boolean(formik.errors.extra)}
-        helperText={formik.touched.extra && formik.errors.extra}
-      />
-    </Grid>
+    <>
+      <FormLabel
+        id="demo-row-radio-buttons-group-label"
+        sx={{ mt: 2, display: "block" }}
+      >
+        Datos del seguro requerido:
+      </FormLabel>
+      <Grid item xs={12}>
+        <TextField
+          id="extra"
+          label="Sea lo más especifico"
+          type="text"
+          variant="filled"
+          fullWidth
+          margin="normal"
+          value={formik.values.extra}
+          onChange={formik.handleChange}
+          error={formik.touched.extra && Boolean(formik.errors.extra)}
+          helperText={formik.touched.extra && formik.errors.extra}
+        />
+      </Grid>
+    </>
   );
 };
 

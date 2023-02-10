@@ -131,27 +131,27 @@ const InfoHome = () => {
                 </Button>
               </Stack>
             </Stack>
-            <Link
-              to="/sobre"
-              style={{
-                marginLeft: "auto",
-                marginRight: "auto",
-                textDecoration: "none",
-              }}
-            >
-              <Button
-                sx={{
-                  marginTop: 2,
-                  width: "auto",
-                }}
-                variant="contained"
-                color="primary"
-              >
-                Conóceme
-              </Button>
-            </Link>
           </Stack>
         </Grid>
+        <Link
+          to="/sobre"
+          style={{
+            marginLeft: "auto",
+            marginRight: "auto",
+            textDecoration: "none",
+          }}
+        >
+          <Button
+            sx={{
+              marginTop: 2,
+              width: "auto",
+            }}
+            variant="contained"
+            color="primary"
+          >
+            Conóceme
+          </Button>
+        </Link>
       </Grid>
     </Container>
   );
