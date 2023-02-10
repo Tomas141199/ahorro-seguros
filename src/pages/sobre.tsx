@@ -95,13 +95,12 @@ export default function BasicTabs() {
               <Avatar
                 alt="Roberto Lagunes Profile"
                 sx={{
-                  backgroundColor: "#0773c0",
-                  width: 200,
-                  height: 200,
-                  "& .MuiAvatar-img": { width: 120 },
+                  width: 240,
+                  height: 240,
+                  "& .MuiAvatar-img": { width: 240 },
                 }}
                 src={
-                  "https://res.cloudinary.com/my-account-145/image/upload/v1674012856/profile_cc9f6a948e.png"
+                  "https://res.cloudinary.com/my-account-145/image/upload/v1675912995/Whats_App_Image_2023_02_08_at_20_41_34_removebg_preview_c5702c11c1.png?updated_at=2023-02-10T03:44:39.135Z"
                 }
               />
             </Stack>
