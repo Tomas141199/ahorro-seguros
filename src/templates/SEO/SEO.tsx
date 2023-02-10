@@ -27,7 +27,7 @@ export const SEO = (props: Props) => {
       <meta property="og:url" content="https://ahorro-seguros.com/" />
       <meta
         property="og:title"
-        content="Meta Tags — Preview, Edit and Generate"
+        content="Ahorro seguros - Roberto Lagunes Cabrera"
       />
       <meta
         property="og:description"
