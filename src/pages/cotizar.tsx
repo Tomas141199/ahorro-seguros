@@ -115,15 +115,14 @@ const Cotizar = () => {
         default:
           break;
       }
-      console.log(values);
-      // fetch("https://getform.io/f/45fc1cf4-cbf0-47ce-a906-f6f8706ba327", {
-      //   method: "POST",
-      //   body: formData,
-      // })
-      //   .then((response) => {
-      //     window.location.replace("/respuesta");
-      //   })
-      //   .catch((error) => console.log(error));
+      fetch("https://getform.io/f/45fc1cf4-cbf0-47ce-a906-f6f8706ba327", {
+        method: "POST",
+        body: formData,
+      })
+        .then((response) => {
+          window.location.replace("/respuesta");
+        })
+        .catch((error) => console.log(error));
     },
   });
 

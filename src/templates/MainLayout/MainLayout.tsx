@@ -43,7 +43,7 @@ export default function MainLayout(props: Props) {
         sx={{
           textAlign: "center",
           fontSize: 12,
-          paddingX: 20,
+          paddingX: 4,
           paddingY: 1,
           bgcolor: "#F3F5F6",
         }}

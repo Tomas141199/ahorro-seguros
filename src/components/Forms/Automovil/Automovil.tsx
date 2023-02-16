@@ -22,6 +22,7 @@ const Automovil: FC<Props> = ({ formik }) => {
       >
         Datos adicionales del propetario:
       </FormLabel>
+
       <Grid container spacing={2} columnSpacing={2}>
         <Grid item xs={12} md={3}>
           <TextField
@@ -58,7 +59,31 @@ const Automovil: FC<Props> = ({ formik }) => {
       >
         Datos del automóvil:
       </FormLabel>
+
       <Grid container spacing={2} columnSpacing={2}>
+        <Grid item xs={12} md={3}>
+          <FormControl variant="filled" fullWidth sx={{ marginTop: 2 }}>
+            <InputLabel id="demo-simple-select-filled-label">
+              Tipo de automóvil
+            </InputLabel>
+            <Select
+              labelId="demo-simple-select-filled-label"
+              id="tipo"
+              name="tipo"
+              value={formik.values.tipo}
+              onChange={formik.handleChange}
+              error={formik.touched.tipo && Boolean(formik.errors.tipo)}
+            >
+              <MenuItem value={"Auto"}>Auto</MenuItem>
+              <MenuItem value={"Pick-up"}>Pick up</MenuItem>
+              <MenuItem value={"Camión"}>Camión</MenuItem>
+              <MenuItem value={"Tracto"}>Tracto</MenuItem>
+            </Select>
+            <FormHelperText sx={{ color: red[800], textAlign: "left" }}>
+              {formik.touched.tipo && formik.errors.tipo}
+            </FormHelperText>
+          </FormControl>
+        </Grid>
         <Grid item xs={12} md={3}>
           <TextField
             id="marca"
@@ -100,30 +125,6 @@ const Automovil: FC<Props> = ({ formik }) => {
             error={formik.touched.anio && Boolean(formik.errors.anio)}
             helperText={formik.touched.anio && formik.errors.anio}
           />
-        </Grid>
-
-        <Grid item xs={12} md={3}>
-          <FormControl variant="filled" fullWidth sx={{ marginTop: 2 }}>
-            <InputLabel id="demo-simple-select-filled-label">
-              Tipo de automóvil
-            </InputLabel>
-            <Select
-              labelId="demo-simple-select-filled-label"
-              id="tipo"
-              name="tipo"
-              value={formik.values.tipo}
-              onChange={formik.handleChange}
-              error={formik.touched.tipo && Boolean(formik.errors.tipo)}
-            >
-              <MenuItem value={"Auto"}>Auto</MenuItem>
-              <MenuItem value={"Pick-up"}>Pick up</MenuItem>
-              <MenuItem value={"Camión"}>Camión</MenuItem>
-              <MenuItem value={"Tractor"}>Tractor</MenuItem>
-            </Select>
-            <FormHelperText sx={{ color: red[800], textAlign: "left" }}>
-              {formik.touched.tipo && formik.errors.tipo}
-            </FormHelperText>
-          </FormControl>
         </Grid>
 
         <Grid item xs={12}>
