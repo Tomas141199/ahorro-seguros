@@ -1,5 +1,5 @@
 import * as React from "react";
-import { useStaticQuery, graphql, Link } from "gatsby";
+import { useStaticQuery, Link } from "gatsby";
 import Container from "@mui/material/Container";
 import Avatar from "@mui/material/Avatar";
 import { Button, Rating, Stack, Typography } from "@mui/material";
@@ -8,44 +8,11 @@ import Grid from "@mui/material/Grid";
 import FiberManualRecordIcon from "@mui/icons-material/FiberManualRecord";
 import LocalPhoneIcon from "@mui/icons-material/LocalPhone";
 import MailOutlineIcon from "@mui/icons-material/MailOutline";
-
-const query_info = graphql`
-  query {
-    allStrapiInfoHome {
-      nodes {
-        puesto
-        telefono
-        correo
-        logo {
-          url
-        }
-        nombre
-        telefono
-        url_img {
-          url
-        }
-        descripcion {
-          descripcion
-          id
-        }
-      }
-    }
-  }
-`;
+import { homeInfo } from "../../constants";
 
 const InfoHome = () => {
-  const {
-    allStrapiInfoHome: { nodes: info },
-  } = useStaticQuery(query_info);
-
-  const {
-    nombre,
-    puesto,
-    url_img: { url },
-    telefono,
-    correo,
-    descripcion,
-  } = info[0];
+  const info = homeInfo;
+  const { nombre, puesto, urlImg, telefono, correo, descripcion } = info;
 
   return (
     <Container maxWidth="sm" sx={{ marginTop: "60px", marginX: "auto" }}>
@@ -58,7 +25,7 @@ const InfoHome = () => {
               height: 90,
               "& .MuiAvatar-img": { width: 90 },
             }}
-            src={url}
+            src={urlImg}
           />
         </Grid>
         <Grid item xs={10}>

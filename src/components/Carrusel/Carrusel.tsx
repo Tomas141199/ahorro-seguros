@@ -6,29 +6,9 @@ import {
 } from "react-stacked-center-carousel";
 import { Card } from "../Card";
 import "@fontsource/roboto/100.css";
+import { carrusel } from "../../constants/carruselInfo";
 
 const Carrusel = () => {
-  const data = useStaticQuery(graphql`
-    query {
-      allStrapiCarrusel {
-        edges {
-          node {
-            id
-            titulo
-            cover {
-              strapi_id
-              url
-            }
-          }
-        }
-      }
-    }
-  `);
-
-  const {
-    allStrapiCarrusel: { edges: info },
-  } = data;
-
   const ref = React.useRef();
 
   return (
@@ -45,7 +25,7 @@ const Carrusel = () => {
               slideComponent={Card}
               slideWidth={parentWidth < 800 ? parentWidth : 750}
               carouselWidth={parentWidth}
-              data={info}
+              data={carrusel}
               currentVisibleSlide={currentVisibleSlide}
               maxVisibleSlide={5}
               useGrabCursor

@@ -1,16 +1,8 @@
-import { createTheme } from "@mui/material";
 import type { GatsbyConfig } from "gatsby";
 
 require("dotenv").config({
   path: `.env.${process.env.NODE_ENV}`,
 });
-
-const strapiConfig = {
-  apiURL: process.env.STRAPI_API_URL,
-  accessToken: process.env.STRAPI_TOKEN,
-  collectionTypes: ["carrusel", "marca"],
-  singleTypes: ["info-home"],
-};
 
 const config: GatsbyConfig = {
   siteMetadata: {
@@ -31,10 +23,6 @@ const config: GatsbyConfig = {
       },
     },
     {
-      resolve: `gatsby-source-strapi`,
-      options: strapiConfig,
-    },
-    {
       resolve: `gatsby-theme-material-ui`,
       options: {},
     },
@@ -44,7 +32,17 @@ const config: GatsbyConfig = {
         icon: "src/images/icon-page.webp",
       },
     },
-    // "gatsby-plugin-top-layout",
+    {
+      resolve: `gatsby-plugin-netlify`,
+      options: {
+        headers: {}, // option to add more headers. `Link` headers are transformed by the below criteria
+        allPageHeaders: [], // option to add headers for all pages. `Link` headers are transformed by the below criteria
+        mergeSecurityHeaders: true, // boolean to turn off the default security headers
+        mergeCachingHeaders: true, // boolean to turn off the default caching headers
+        transformHeaders: (headers: any, path: any) => headers, // optional transform for manipulating headers under each path (e.g.sorting), etc.
+        generateMatchPathRewrites: true, // boolean to turn off automatic creation of redirect rules for client only paths
+      },
+    },
   ],
 };
 

@@ -11,12 +11,7 @@ interface CardProps {
 
 export const Card = React.memo(function (props: CardProps) {
   const { data, dataIndex } = props;
-  const {
-    node: {
-      cover: { url },
-      titulo,
-    },
-  } = data[dataIndex];
+  const { id, titulo, cover: url } = data[dataIndex];
 
   return (
     <div
